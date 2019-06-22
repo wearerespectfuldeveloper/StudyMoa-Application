@@ -37,6 +37,6 @@ public class StudyMember extends BaseEntity {
     private StudyGroup studyGroup;
 
     @Enumerated(EnumType.STRING)
-    @Column(length = 10, columnDefinition = "CHAR(10)")
+    @Column(length = 10)
     private StudyMemberRoleType studyMemberRoleType;
 }
