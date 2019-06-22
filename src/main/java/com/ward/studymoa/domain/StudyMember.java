@@ -6,6 +6,7 @@
 package com.ward.studymoa.domain;
 
 import com.ward.studymoa.domain.audit.BaseEntity;
+import com.ward.studymoa.domain.state.StudyMemberRoleType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -34,4 +35,8 @@ public class StudyMember extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "group_idx", updatable = false, nullable = false)
     private StudyGroup studyGroup;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 10, columnDefinition = "CHAR(10)")
+    private StudyMemberRoleType studyMemberRoleType;
 }
