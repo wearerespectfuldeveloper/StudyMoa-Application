@@ -11,7 +11,7 @@ import org.springframework.core.io.Resource;
 
 import java.io.IOException;
 
-public class EnvironmentPostProcessorConfig implements EnvironmentPostProcessor {
+public class EnvironmentPostProcessorLoad implements EnvironmentPostProcessor {
 
     private final YamlPropertySourceLoader loader = new YamlPropertySourceLoader();
 

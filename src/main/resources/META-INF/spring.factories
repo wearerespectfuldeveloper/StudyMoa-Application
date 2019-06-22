@@ -1,1 +1,1 @@
-org.springframework.boot.env.EnvironmentPostProcessor=com.ward.studymoa.EnvironmentPostProcessorConfig
+org.springframework.boot.env.EnvironmentPostProcessor=com.ward.studymoa.EnvironmentPostProcessorLoad
