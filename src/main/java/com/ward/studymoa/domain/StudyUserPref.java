@@ -5,6 +5,7 @@
  */
 package com.ward.studymoa.domain;
 
+import com.ward.studymoa.domain.audit.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -20,13 +21,13 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Getter
-public class StudyUserPref {
+public class StudyUserPref extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "user_idx", nullable = false, updatable = false)
     private StudyUser studyUser;
 
