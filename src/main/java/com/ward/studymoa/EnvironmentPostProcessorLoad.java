@@ -17,7 +17,7 @@ public class EnvironmentPostProcessorLoad implements EnvironmentPostProcessor {
 
     @Override
     public void postProcessEnvironment(ConfigurableEnvironment environment, SpringApplication application) {
-        Resource path = new FileSystemResource("C:/Users/Leafy/Deskp/real_db.yml");
+        Resource path = new FileSystemResource("C:/private-setting.yml");
         PropertySource<?> propertySource = loadYaml(path);
         environment.getPropertySources().addLast(propertySource);
     }

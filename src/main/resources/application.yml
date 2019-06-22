@@ -1,8 +1,31 @@
+# 기본 환경 선택
 spring:
+  profiles:
+    active: local
+
+# 운영 환경
+---
+spring:
+  profiles: operation
+  profiles.include: private
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+server:
+  port: 443
+
+
+# local 환경
+---
+spring:
+  profiles: local
+  profiles.include: private
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     properties:
       hibernate.format_sql: true
@@ -10,4 +33,8 @@ logging:
   level:
     org:
       hibernate:
-        type: trace
+        type:
+          descriptor:
+            sql: trace
+server:
+  port: 8080
