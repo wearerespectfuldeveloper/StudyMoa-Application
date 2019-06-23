@@ -33,7 +33,7 @@ public class StudyUser extends BaseEntity {
     @Column(length = 40, nullable = false, updatable = false)
     private String email;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 100, nullable = false)
     private String password;
 
     @Column(length = 10, nullable = false)

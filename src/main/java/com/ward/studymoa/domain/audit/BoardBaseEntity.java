@@ -15,7 +15,7 @@ import javax.persistence.MappedSuperclass;
 public abstract class BoardBaseEntity extends BaseEntity {
 
     @CreatedBy
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 20, updatable = false)
     protected String createdBy;
 
     public abstract void setCreatedBy();

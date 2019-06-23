@@ -1,6 +1,6 @@
 /**
  * StudyFreeBoard.class
- *
+ * <p>
  * Copyright (c) 2019 WARD.
  */
 package com.ward.studymoa.domain;
@@ -28,7 +28,7 @@ public class StudyFreeBoard extends BoardBaseEntity {
     private Long idx;
 
     @ManyToOne
-    @JoinColumn(name = "user_idx", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "user_idx", nullable = false, updatable = false)
     private StudyUser studyUser;
 
     @Column(length = 300, nullable = false)

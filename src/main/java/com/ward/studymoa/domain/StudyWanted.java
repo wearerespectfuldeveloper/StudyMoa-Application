@@ -28,7 +28,7 @@ public class StudyWanted extends BoardBaseEntity {
     private Long idx;
 
     @ManyToOne
-    @JoinColumn(name = "user_idx", updatable = false, insertable = false, nullable = false)
+    @JoinColumn(name = "user_idx", updatable = false, nullable = false)
     private StudyUser studyUser;
 
     @Column(nullable = false, length = 300)
