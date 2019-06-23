@@ -5,7 +5,7 @@
  */
 package com.ward.studymoa.domain;
 
-import com.ward.studymoa.domain.audit.BoardBaseEntity;
+import com.ward.studymoa.domain.audit.AuthorBaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -21,7 +21,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Getter
-public class StudyWantedReply extends BoardBaseEntity {
+public class StudyWantedReply extends AuthorBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

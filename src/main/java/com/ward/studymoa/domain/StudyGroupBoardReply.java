@@ -1,9 +1,10 @@
 /**
- * StudyFreeBoardReply.class
- *
+ * StudyGroupBoardReply.class
+ * <p>
  * Copyright (c) 2019 WARD.
  */
 package com.ward.studymoa.domain;
+
 
 import com.ward.studymoa.domain.audit.AuthorBaseEntity;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 /**
- * StudyUser가 작성한 잡담 글에 대한 댓글 Entity
+ * 스터디 그룹 게시판의 댓글에 대한 Entity
  *
  * @author Chul Yun
  * @since 2019. 06. 23
@@ -21,25 +22,25 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Getter
-public class StudyFreeBoardReply extends AuthorBaseEntity {
+public class StudyGroupBoardReply extends AuthorBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
     @ManyToOne
-    @JoinColumn(name = "board_idx", updatable = false, nullable = false)
-    private StudyFreeBoard studyFreeBoard;
+    @JoinColumn(name = "board_idx", nullable = false, updatable = false)
+    private StudyGroupBoard studyGroupBoard;
 
     @ManyToOne
-    @JoinColumn(name = "user_idx", updatable = false, nullable = false)
-    private StudyUser studyUser;
+    @JoinColumn(name = "member_idx", nullable = false, updatable = false)
+    private StudyMember studyMember;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
     @Override
     public void setCreatedBy() {
-        this.createdBy = studyUser.getId();
+        this.createdBy = studyMember.getStudyUser().getId();
     }
 }

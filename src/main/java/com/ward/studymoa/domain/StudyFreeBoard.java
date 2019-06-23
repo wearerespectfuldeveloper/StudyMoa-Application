@@ -5,7 +5,7 @@
  */
 package com.ward.studymoa.domain;
 
-import com.ward.studymoa.domain.audit.BoardBaseEntity;
+import com.ward.studymoa.domain.audit.AuthorBaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -21,7 +21,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Getter
-public class StudyFreeBoard extends BoardBaseEntity {
+public class StudyFreeBoard extends AuthorBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +34,7 @@ public class StudyFreeBoard extends BoardBaseEntity {
     @Column(length = 300, nullable = false)
     private String freeBoardTitle;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String freeBoardDesc;
 
     @Override

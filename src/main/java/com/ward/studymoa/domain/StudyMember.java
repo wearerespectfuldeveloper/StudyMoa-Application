@@ -26,7 +26,7 @@ public class StudyMember extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idx;
 
     @ManyToOne
     @JoinColumn(name = "user_idx", updatable = false, nullable = false)
