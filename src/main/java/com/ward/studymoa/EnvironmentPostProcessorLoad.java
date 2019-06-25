@@ -19,7 +19,6 @@ import java.io.IOException;
 /**
  * 외부 설정 파일을 로드하는 클래스
  *
- * @author Chul Yun
  * @since 2019. 06. 22
  * @version 1.00
  */

@@ -16,7 +16,6 @@ import javax.persistence.MappedSuperclass;
 /**
  * 작성자를 기록하기 위한 Audit AuthorBase Entity
  *
- * @author Chul Yun
  * @since 2019. 06. 22
  * @version 1.00
  */

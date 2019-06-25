@@ -14,7 +14,6 @@ import javax.persistence.*;
 /**
  * 스터디 그룹의 스터디 진행 기록 Entity
  *
- * @author Chul Yun
  * @since 2019. 06. 23
  * @version 1.00
  */

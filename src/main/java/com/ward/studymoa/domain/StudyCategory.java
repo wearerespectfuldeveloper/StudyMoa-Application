@@ -13,7 +13,6 @@ import javax.persistence.*;
 /**
  * 스터디 카테고리에 대한 Entity
  *
- * @author Chul Yun
  * @since 2019. 06. 25
  * @version 1.00
  */

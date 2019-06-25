@@ -14,7 +14,6 @@ import javax.persistence.*;
 /**
  * StudyUser가 작성한 잡담 글에 대한 Entity
  *
- * @author Chul Yun
  * @since 2019. 06. 23
  * @version 1.00
  */

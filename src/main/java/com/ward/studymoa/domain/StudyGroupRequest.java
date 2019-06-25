@@ -15,7 +15,6 @@ import javax.persistence.*;
 /**
  * 스터디 그룹 참여 신청에 대한 Entity
  *
- * @author Chul Yun
  * @since 2019. 06. 23
  * @version 1.00
  */

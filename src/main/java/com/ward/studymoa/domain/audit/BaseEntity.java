@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 /**
  * 생성일, 수정일을 기록하기 위한 Audit Base Entity
  *
- * @author Chul Yun
  * @since 2019. 06. 22
  * @version 1.00
  */

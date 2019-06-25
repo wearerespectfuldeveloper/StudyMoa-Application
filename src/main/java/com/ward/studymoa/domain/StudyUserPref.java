@@ -14,7 +14,6 @@ import javax.persistence.*;
 /**
  * 스터디모아 회원의 관심사 Entity
  *
- * @author Chul Yun
  * @since 2019. 06. 22
  * @version 1.00
  */

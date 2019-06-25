@@ -14,7 +14,6 @@ import javax.persistence.*;
 /**
  * StudyUser가 스터디를 구하는 글에 대한 Entity
  *
- * @author Chul Yun
  * @since 2019. 06. 23
  * @version 1.00
  */
