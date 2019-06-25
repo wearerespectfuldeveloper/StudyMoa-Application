@@ -6,6 +6,7 @@
 package com.ward.studymoa.domain;
 
 import com.ward.studymoa.domain.audit.BaseEntity;
+import com.ward.studymoa.domain.state.SocialType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -49,4 +50,11 @@ public class StudyUser extends BaseEntity {
 
     @Column(columnDefinition = "TEXT")
     private String introDesc;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private SocialType socialType;
+
+    @Column
+    private String principal;
 }
