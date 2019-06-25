@@ -27,6 +27,10 @@ public class StudyGroup extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
+    @ManyToOne
+    @JoinColumn(name = "category_idx", nullable = false, updatable = false)
+    private StudyCategory studyCategory;
+
     @Column(length = 300)
     private String studyTitle;
 
