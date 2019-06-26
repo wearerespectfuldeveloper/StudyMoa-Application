@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.config;
+package com.ward.studymoa.common.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

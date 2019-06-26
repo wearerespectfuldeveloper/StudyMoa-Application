@@ -5,7 +5,7 @@
  */
 package com.ward.studymoa.domain;
 
-import com.ward.studymoa.domain.audit.BaseEntity;
+import com.ward.studymoa.common.audit.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

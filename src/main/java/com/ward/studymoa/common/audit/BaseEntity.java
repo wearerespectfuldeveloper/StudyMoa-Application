@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.domain.audit;
+package com.ward.studymoa.common.audit;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

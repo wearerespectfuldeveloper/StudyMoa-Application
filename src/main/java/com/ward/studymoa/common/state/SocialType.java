@@ -1,4 +1,4 @@
-package com.ward.studymoa.domain.state;
+package com.ward.studymoa.common.state;
 
 public enum SocialType {
     GOOGLE("google"),
