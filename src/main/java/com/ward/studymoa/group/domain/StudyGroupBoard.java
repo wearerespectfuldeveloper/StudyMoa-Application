@@ -1,9 +1,9 @@
 /**
- * StudyMinutes.class
+ * StudyGroupBoard.class
  *
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.domain;
+package com.ward.studymoa.group.domain;
 
 import com.ward.studymoa.common.audit.AuthorBaseEntity;
 import lombok.Getter;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 /**
- * 스터디 그룹의 스터디 진행 기록 Entity
+ * 스터디 그룹 게시판 Entity
  *
  * @since 2019. 06. 23
  * @version 1.00
@@ -20,11 +20,15 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Getter
-public class StudyMinutes extends AuthorBaseEntity {
+public class StudyGroupBoard extends AuthorBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
+
+    @ManyToOne
+    @JoinColumn(name = "group_idx", nullable = false, updatable = false)
+    private StudyGroup studyGroup;
 
     @ManyToOne
     @JoinColumn(name = "member_idx", nullable = false, updatable = false)

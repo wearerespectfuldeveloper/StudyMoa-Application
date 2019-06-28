@@ -3,7 +3,7 @@
  * <p>
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.domain;
+package com.ward.studymoa.group.domain;
 
 
 import com.ward.studymoa.common.audit.AuthorBaseEntity;

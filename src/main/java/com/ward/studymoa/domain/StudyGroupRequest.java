@@ -7,6 +7,7 @@ package com.ward.studymoa.domain;
 
 import com.ward.studymoa.common.audit.BaseEntity;
 import com.ward.studymoa.common.state.NotificationStatusType;
+import com.ward.studymoa.group.domain.StudyGroup;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
