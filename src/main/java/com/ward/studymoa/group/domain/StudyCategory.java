@@ -5,6 +5,7 @@
  */
 package com.ward.studymoa.group.domain;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -27,4 +28,9 @@ public class StudyCategory {
 
     @Column(nullable = false, length = 30)
     private String title;
+
+    @Builder
+    public StudyCategory(String title) {
+        this.title = title;
+    }
 }

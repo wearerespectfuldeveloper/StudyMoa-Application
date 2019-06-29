@@ -27,7 +27,7 @@ public class StudyCategoryService {
     private final StudyCategoryRepository studyCategoryRepository;
 
     @Transactional
-    public List<StudyCategory> findAllOrderByCreatedDate() {
-        return studyCategoryRepository.findAll(Sort.by(Sort.Direction.ASC, "createdDate"));
+    public List<StudyCategory> findAllOrderByTitle() {
+        return studyCategoryRepository.findAll(Sort.by(Sort.Direction.ASC, "title"));
     }
 }
