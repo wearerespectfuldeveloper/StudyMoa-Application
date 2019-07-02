@@ -29,7 +29,7 @@ public class EnvironmentPostProcessorLoad implements EnvironmentPostProcessor {
     private final YamlPropertySourceLoader loader = new YamlPropertySourceLoader();
     private final String WINDOW_PATH = "C:/private-setting.yml";
     private final String MAX_PATH = "/Users/private-setting.yml";
-    private final String LINUX_PATH = "/home/ec2-user/private-setting.yml";
+    private final String LINUX_PATH = "private-setting.yml";
 
     @Override
     public void postProcessEnvironment(ConfigurableEnvironment environment, SpringApplication application) {
