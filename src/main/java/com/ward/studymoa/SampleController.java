@@ -10,7 +10,7 @@ public class SampleController {
     @GetMapping(name = "/")
     @ResponseBody
     public String sampleRequest() {
-        return "Hello StudyMoa!";
+        return "Hello StudyMoa! I'm Done!!";
     }
 
     @GetMapping(name = "/haha")
