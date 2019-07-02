@@ -12,4 +12,10 @@ public class SampleController {
     public String sampleRequest() {
         return "Hello StudyMoa!";
     }
+
+    @GetMapping(name = "/haha")
+    @ResponseBody
+    public String haha() {
+        return "hahahahahaha";
+    }
 }
