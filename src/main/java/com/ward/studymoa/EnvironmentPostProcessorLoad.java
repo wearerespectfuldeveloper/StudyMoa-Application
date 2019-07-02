@@ -40,7 +40,7 @@ public class EnvironmentPostProcessorLoad implements EnvironmentPostProcessor {
 
     private PropertySource<?> loadYaml(Resource path) {
         if (!path.exists()) {
-            throw new IllegalArgumentException("Resource " + path + " does not exist");
+            throw new IllegalArgumentException("Resource : " + path + " does not exist");
         }
         try {
             return this.loader.load("custom-resource", path).get(0);
