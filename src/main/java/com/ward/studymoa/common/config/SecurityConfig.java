@@ -20,13 +20,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         characterEncodingFilter.setForceEncoding(true);
 
         http.authorizeRequests()
-                .antMatchers("/")
+                .antMatchers("/", "/ha")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(characterEncodingFilter, CsrfFilter.class)
                 .csrf().disable()
-                .formLogin().disable()
-                .logout().disable();
+                .formLogin().disable();
     }
 }
