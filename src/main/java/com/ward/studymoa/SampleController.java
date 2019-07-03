@@ -11,7 +11,7 @@ public class SampleController {
     @GetMapping(value = "/")
     @ResponseBody
     public String sampleRequest() {
-        return "Hello StudyMoa! I'm Done!!";
+        return "Hello StudyMoa!";
     }
 
     @GetMapping(value = "/ha")
