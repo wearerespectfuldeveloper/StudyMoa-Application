@@ -17,6 +17,6 @@ public class SampleController {
     @GetMapping(value = "/ha")
     @ResponseBody
     public String hello() {
-        return "hahahahahaha";
+        return "jenkins!!!!";
     }
 }
