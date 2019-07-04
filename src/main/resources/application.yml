@@ -6,7 +6,7 @@ spring:
 # 운영 환경
 ---
 spring:
-  profiles: operation
+  profiles: release
   profiles.include: private
   jpa:
     show-sql: true
