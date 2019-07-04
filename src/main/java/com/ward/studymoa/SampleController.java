@@ -11,12 +11,12 @@ public class SampleController {
     @GetMapping(value = "/")
     @ResponseBody
     public String sampleRequest() {
-        return "Hello StudyMoa hello";
+        return "Hello StudyMoa";
     }
 
     @GetMapping(value = "/ha")
     @ResponseBody
     public String hello() {
-        return "jenkins!!!!!!!!!!";
+        return "yeah!!!!!";
     }
 }
