@@ -3,12 +3,10 @@
  *
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.group.domain;
+package com.ward.studymoa.core;
 
 import com.ward.studymoa.common.audit.BaseEntity;
 import com.ward.studymoa.common.state.StudyMemberRoleType;
-import com.ward.studymoa.domain.StudyUser;
-import com.ward.studymoa.group.domain.StudyGroup;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

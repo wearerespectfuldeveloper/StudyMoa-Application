@@ -3,7 +3,7 @@
  * <p>
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.group.domain;
+package com.ward.studymoa.core;
 
 import lombok.Builder;
 import lombok.Getter;
