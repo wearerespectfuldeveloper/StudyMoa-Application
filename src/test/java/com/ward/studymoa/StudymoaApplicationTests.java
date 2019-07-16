@@ -1,7 +1,6 @@
 package com.ward.studymoa;
 
-import com.ward.studymoa.api.service.StudyCategoryService;
-import com.ward.studymoa.core.StudyCategory;
+import com.ward.studymoa.group.service.StudyCategoryService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

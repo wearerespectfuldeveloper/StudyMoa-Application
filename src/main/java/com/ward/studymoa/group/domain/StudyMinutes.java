@@ -1,9 +1,9 @@
 /**
- * StudyWanted.class
+ * StudyMinutes.class
  *
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.core;
+package com.ward.studymoa.group.domain;
 
 import com.ward.studymoa.common.audit.AuthorBaseEntity;
 import lombok.Getter;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 /**
- * StudyUser가 스터디를 구하는 글에 대한 Entity
+ * 스터디 그룹의 스터디 진행 기록 Entity
  *
  * @since 2019. 06. 23
  * @version 1.00
@@ -20,24 +20,24 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Getter
-public class StudyWanted extends AuthorBaseEntity {
+public class StudyMinutes extends AuthorBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
     @ManyToOne
-    @JoinColumn(name = "user_idx", updatable = false, nullable = false)
-    private StudyUser studyUser;
+    @JoinColumn(name = "member_idx", nullable = false, updatable = false)
+    private StudyMember studyMember;
 
-    @Column(nullable = false, length = 300)
-    private String wandtedTitle;
+    @Column(length = 300, nullable = false)
+    private String title;
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String wandtedDesc;
+    private String content;
 
     @Override
     public void setCreatedBy() {
-        this.createdBy = studyUser.getId();
+        this.createdBy = studyMember.getStudyUser().getId();
     }
 }

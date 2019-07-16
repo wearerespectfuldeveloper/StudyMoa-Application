@@ -1,6 +1,7 @@
 package com.ward.studymoa.api.service;
 
-import com.ward.studymoa.core.StudyCategory;
+import com.ward.studymoa.group.domain.StudyCategory;
+import com.ward.studymoa.group.service.StudyCategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,8 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

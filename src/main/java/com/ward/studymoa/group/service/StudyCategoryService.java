@@ -3,10 +3,10 @@
  *
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.api.service;
+package com.ward.studymoa.group.service;
 
-import com.ward.studymoa.core.StudyCategory;
-import com.ward.studymoa.core.repository.StudyCategoryRepository;
+import com.ward.studymoa.group.domain.StudyCategory;
+import com.ward.studymoa.group.repository.StudyCategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
