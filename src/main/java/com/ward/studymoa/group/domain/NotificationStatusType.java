@@ -1,9 +1,9 @@
 /**
  * NotificationStatusType.class
- *
+ * <p>
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.common.state;
+package com.ward.studymoa.group.domain;
 
 /**
  * 스터디 그룹 참여, 초대 신청에 대한 상태 정보 Enum

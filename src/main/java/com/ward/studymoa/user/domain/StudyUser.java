@@ -6,9 +6,11 @@
 package com.ward.studymoa.user.domain;
 
 import com.ward.studymoa.common.audit.BaseEntity;
-import com.ward.studymoa.common.state.SocialType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import javax.persistence.*;
 
@@ -55,6 +57,7 @@ public class StudyUser extends BaseEntity {
     @Column(length = 20)
     private SocialType socialType;
 
-    @Column
-    private String principal;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private StudyUserRoleType studyUserRoleType;
 }

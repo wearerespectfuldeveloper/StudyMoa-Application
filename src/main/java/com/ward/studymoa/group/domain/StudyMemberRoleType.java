@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.common.state;
+package com.ward.studymoa.group.domain;
 
 /**
  * 스터디 그룹 멤버의 역할 정의 Enum
