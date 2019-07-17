@@ -26,7 +26,7 @@ public class StudyFreeBoard extends AuthorBaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx", nullable = false, updatable = false)
     private StudyUser studyUser;
 

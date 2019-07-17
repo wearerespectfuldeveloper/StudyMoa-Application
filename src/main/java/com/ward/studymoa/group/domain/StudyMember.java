@@ -27,11 +27,11 @@ public class StudyMember extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx", updatable = false, nullable = false)
     private StudyUser studyUser;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_idx", updatable = false, nullable = false)
     private StudyGroup studyGroup;
 

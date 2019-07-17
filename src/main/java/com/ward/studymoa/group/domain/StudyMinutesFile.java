@@ -26,7 +26,7 @@ public class StudyMinutesFile extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "minutes_idx", updatable = false, nullable = false)
     private StudyMinutes studyMinutes;
 

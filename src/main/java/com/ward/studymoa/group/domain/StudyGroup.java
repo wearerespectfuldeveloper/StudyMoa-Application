@@ -26,7 +26,7 @@ public class StudyGroup extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_idx", nullable = false, updatable = false)
     private StudyCategory studyCategory;
 

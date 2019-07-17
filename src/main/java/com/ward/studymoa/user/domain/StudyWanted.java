@@ -26,7 +26,7 @@ public class StudyWanted extends AuthorBaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_idx", updatable = false, nullable = false)
     private StudyUser studyUser;
 
