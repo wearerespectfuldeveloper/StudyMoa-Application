@@ -8,6 +8,9 @@ spring:
 spring:
   profiles: release
   profiles.include: private
+  data:
+    rest:
+      base-path: /api
   jpa:
     show-sql: true
     hibernate:
@@ -21,7 +24,7 @@ server:
 ---
 spring:
   profiles: local
-  profiles.include: private
+  profiles.include: private, google
   jpa:
     show-sql: true
     hibernate:
@@ -29,6 +32,9 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     properties:
       hibernate.format_sql: true
+  data:
+    rest:
+      base-path: /api
 logging:
   level:
     org:
@@ -38,3 +44,5 @@ logging:
             sql: trace
 server:
   port: 8081
+
+

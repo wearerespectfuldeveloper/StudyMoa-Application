@@ -11,8 +11,10 @@ import org.springframework.boot.env.EnvironmentPostProcessor;
 import org.springframework.boot.env.YamlPropertySourceLoader;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.PropertySource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
+import sun.tools.java.ClassPath;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,13 +29,10 @@ import java.util.List;
 public class EnvironmentPostProcessorLoad implements EnvironmentPostProcessor {
 
     private final YamlPropertySourceLoader loader = new YamlPropertySourceLoader();
-    private final String WINDOW_PATH = "C:/private-setting.yml";
-    private final String MAX_PATH = "/Users/private-setting.yml";
-    private final String LINUX_PATH = "../private-setting.yml";
 
     @Override
     public void postProcessEnvironment(ConfigurableEnvironment environment, SpringApplication application) {
-        Resource path = new FileSystemResource(getPrivateResourcePath());
+        Resource path = new ClassPathResource("private-setting.yml");
         PropertySource<?> propertySource = loadYaml(path);
         environment.getPropertySources().addLast(propertySource);
     }
@@ -47,18 +46,6 @@ public class EnvironmentPostProcessorLoad implements EnvironmentPostProcessor {
         } catch (IOException ex) {
             throw new IllegalStateException(
                     "Failed to load yaml configuration from " + path, ex);
-        }
-    }
-
-    private String getPrivateResourcePath() {
-        String osName = System.getProperty("os.name").toLowerCase();
-
-        if (osName.contains("win")) {
-            return WINDOW_PATH;
-        } else if (osName.contains("mac")) {
-            return MAX_PATH;
-        } else {
-            return LINUX_PATH;
         }
     }
 }

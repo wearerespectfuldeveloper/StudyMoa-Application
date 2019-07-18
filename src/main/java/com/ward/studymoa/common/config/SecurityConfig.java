@@ -22,12 +22,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         characterEncodingFilter.setForceEncoding(true);
 
         http.authorizeRequests()
-                .antMatchers("/oauth2/**",
-                        "/login/**",
-                        "/css/**",
-                        "/images/**",
-                        "/js/**",
-                        "/console/**")
+                .antMatchers("/api/oauth2/**",
+                        "/**",
+                        "/api/login/**")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
