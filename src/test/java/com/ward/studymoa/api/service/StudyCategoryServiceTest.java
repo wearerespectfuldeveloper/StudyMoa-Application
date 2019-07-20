@@ -22,7 +22,7 @@ public class StudyCategoryServiceTest {
     @Test
     public void studyCategoryFindAllTest() {
         List<StudyCategory> studyCateogryList = studyCategoryService.findAllOrderByTitle();
-        //
+
         for (StudyCategory studyCategory : studyCateogryList) {
             log.info("Category Title : " + studyCategory.getTitle());
         }
