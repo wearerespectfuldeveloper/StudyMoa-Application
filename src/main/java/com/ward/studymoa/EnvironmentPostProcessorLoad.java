@@ -1,6 +1,6 @@
 /**
  * EnvironmentPostProcessorLoad.class
- *
+ * <p>
  * Copyright (c) 2019 WARD.
  */
 package com.ward.studymoa;
@@ -12,13 +12,9 @@ import org.springframework.boot.env.YamlPropertySourceLoader;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.PropertySource;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
-import sun.tools.java.ClassPath;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 외부 설정 파일을 로드하는 클래스
