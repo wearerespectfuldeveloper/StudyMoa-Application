@@ -18,16 +18,12 @@ public class PerformanceLoggingAspect {
         Object result = null;
         StopWatch stopWatch = new StopWatch();
 
-        try {
-            stopWatch.start();
-            result = proceedingJoinPoint.proceed();
-            stopWatch.stop();
+        stopWatch.start();
+        result = proceedingJoinPoint.proceed();
+        stopWatch.stop();
 
-            log.info("수행 시간 : " + stopWatch.getTotalTimeMillis() + "(ms)");
-        } catch (Throwable throwable) {
-            log.error("error msg : " + throwable.getMessage());
-            throw throwable;
-        }
+        log.info("수행 시간 : " + stopWatch.getTotalTimeMillis() + "(ms)");
+        log.info("Return Value : " + result.toString());
         return result;
     }
 }
