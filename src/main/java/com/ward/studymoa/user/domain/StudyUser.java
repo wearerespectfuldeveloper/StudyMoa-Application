@@ -44,9 +44,6 @@ public class StudyUser extends BaseEntity {
     @Column(length = 20, nullable = false)
     private String phoneNumber;
 
-    @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT false")
-    private Boolean authStatus;
-
     @Column(length = 300)
     private String introTitle;
 
@@ -59,5 +56,5 @@ public class StudyUser extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
-    private StudyUserRoleType studyUserRoleType;
+    private StudyUserRoleType studyUserRoleType = StudyUserRoleType.NON_AUTH_USER;
 }
