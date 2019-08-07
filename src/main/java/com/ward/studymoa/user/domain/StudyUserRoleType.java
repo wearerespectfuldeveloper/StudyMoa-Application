@@ -13,8 +13,8 @@ package com.ward.studymoa.user.domain;
  */
 public enum StudyUserRoleType {
 
-    NON_AUTH_USER("non_auth_user"),
-    AUTH_USER("auth_user");
+    ROLE_NON_AUTH_USER("non_auth_user"),
+    ROLE_AUTH_USER("auth_user");
 
     private String roleType;
 

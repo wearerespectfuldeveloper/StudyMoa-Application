@@ -38,6 +38,6 @@ public class StudyWanted extends AuthorBaseEntity {
 
     @Override
     public void setCreatedBy() {
-        this.createdBy = studyUser.getId();
+        this.createdBy = studyUser.getUserId();
     }
 }

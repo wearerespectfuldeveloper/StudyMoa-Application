@@ -40,6 +40,6 @@ public class StudyGroupBoardReply extends AuthorBaseEntity {
 
     @Override
     public void setCreatedBy() {
-        this.createdBy = studyMember.getStudyUser().getId();
+        this.createdBy = studyMember.getStudyUser().getUserId();
     }
 }
