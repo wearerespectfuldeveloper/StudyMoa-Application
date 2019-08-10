@@ -1,16 +1,11 @@
 package com.ward.studymoa.common.config;
 
-import com.ward.studymoa.common.exception.JwtTokenFilteringException;
-import com.ward.studymoa.user.domain.StudyUser;
-import com.ward.studymoa.user.service.StudyUserAuthService;
+import com.ward.studymoa.common.exception.AuthenticationException;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -38,7 +33,7 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
                 Authentication auth = jwtProvider.getAuthentication(jwt);
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
-        } catch (JwtTokenFilteringException e) {
+        } catch (AuthenticationException e) {
             SecurityContextHolder.clearContext();
             httpServletResponse.sendError(e.getHttpStatus().value(), e.getMessage());
             return;

@@ -5,10 +5,8 @@ import com.ward.studymoa.user.dto.SignUpDTO;
 import com.ward.studymoa.user.service.StudyUserAuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
@@ -22,7 +20,12 @@ public class AuthRestController {
         StudyUser studyUser = signUpDTO.ofStudyUser();
 
         studyUserAuthService.signUp(studyUser);
-        return ResponseEntity.ok().body("User registerd successfully!");
+        return ResponseEntity.ok().body("User registered successfully!");
+    }
+
+    @PostMapping("signin")
+    public String signIn(@RequestParam String userId, @RequestParam String password) {
+        return studyUserAuthService.signIn(userId, password);
     }
 
     @PostMapping("/test")

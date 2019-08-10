@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 
 @AllArgsConstructor
-public class JwtTokenFilteringException extends RuntimeException {
+public class AuthenticationException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
