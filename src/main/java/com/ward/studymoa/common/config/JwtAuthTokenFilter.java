@@ -28,8 +28,6 @@ public class JwtAuthTokenFilter extends OncePerRequestFilter {
         try {
             String jwt = jwtProvider.resolveToken(httpServletRequest);
             if (jwt != null && jwtProvider.validateJwtToken(jwt)) {
-                String userId = jwtProvider.getUserIdFromJwtToken(jwt);
-
                 Authentication auth = jwtProvider.getAuthentication(jwt);
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
