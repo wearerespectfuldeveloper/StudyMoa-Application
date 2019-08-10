@@ -5,7 +5,6 @@ import com.ward.studymoa.user.dto.SignUpDTO;
 import com.ward.studymoa.user.service.StudyUserAuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
