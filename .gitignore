@@ -33,3 +33,5 @@ build/
 
 ### private setting file ###
 private-setting.yml
+
+bin
