@@ -31,10 +31,10 @@ public class StudyWanted extends AuthorBaseEntity {
     private StudyUser studyUser;
 
     @Column(nullable = false, length = 300)
-    private String wandtedTitle;
+    private String wantedTitle;
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String wandtedDesc;
+    private String wantedDesc;
 
     @Override
     public void setCreatedBy() {
