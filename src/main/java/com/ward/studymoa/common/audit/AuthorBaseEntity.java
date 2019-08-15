@@ -27,6 +27,4 @@ public abstract class AuthorBaseEntity extends BaseEntity {
     @CreatedBy
     @Column(nullable = false, length = 20, updatable = false)
     protected String createdBy;
-
-    public abstract void setCreatedBy();
 }

@@ -39,9 +39,4 @@ public class StudyGroupBoard extends AuthorBaseEntity {
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
-
-    @Override
-    public void setCreatedBy() {
-        this.createdBy = studyMember.getStudyUser().getUserId();
-    }
 }

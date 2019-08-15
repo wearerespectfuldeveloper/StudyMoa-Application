@@ -36,9 +36,4 @@ public class StudyWantedReply extends AuthorBaseEntity {
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String content;
-
-    @Override
-    public void setCreatedBy() {
-        this.createdBy = studyUser.getUserId();
-    }
 }

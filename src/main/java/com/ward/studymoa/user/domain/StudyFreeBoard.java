@@ -35,9 +35,4 @@ public class StudyFreeBoard extends AuthorBaseEntity {
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String freeBoardDesc;
-
-    @Override
-    public void setCreatedBy() {
-        this.createdBy = studyUser.getUserId();
-    }
 }

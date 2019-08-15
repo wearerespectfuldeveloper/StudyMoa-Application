@@ -6,6 +6,7 @@
 package com.ward.studymoa.user.domain;
 
 import com.ward.studymoa.common.audit.AuthorBaseEntity;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -36,8 +37,11 @@ public class StudyWanted extends AuthorBaseEntity {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String wantedDesc;
 
-    @Override
-    public void setCreatedBy() {
-        this.createdBy = studyUser.getUserId();
+    @Builder
+    public StudyWanted(Long idx, StudyUser studyUser, String wantedTitle, String wantedDesc) {
+        this.idx = idx;
+        this.studyUser = studyUser;
+        this.wantedTitle = wantedTitle;
+        this.wantedDesc = wantedDesc;
     }
 }
