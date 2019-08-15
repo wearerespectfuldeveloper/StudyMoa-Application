@@ -1,10 +1,10 @@
-package com.ward.studymoa.user.dto;
+package com.ward.studymoa.user.dto.request;
 
 import com.ward.studymoa.user.domain.StudyUser;
 import lombok.Data;
 
 @Data
-public class SignUpDTO {
+public class SignUpDto {
 
     private String userId;
     private String email;

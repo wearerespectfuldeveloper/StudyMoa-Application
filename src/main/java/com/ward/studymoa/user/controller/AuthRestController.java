@@ -1,8 +1,8 @@
 package com.ward.studymoa.user.controller;
 
 import com.ward.studymoa.user.domain.StudyUser;
-import com.ward.studymoa.user.dto.SignUpDTO;
-import com.ward.studymoa.user.service.StudyUserAuthService;
+import com.ward.studymoa.user.dto.request.SignUpDto;
+import com.ward.studymoa.user.service.impl.StudyUserAuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class AuthRestController {
     private final StudyUserAuthService studyUserAuthService;
 
     @PostMapping("/signup")
-    public ResponseEntity<String> registerUser(@RequestBody SignUpDTO signUpDTO) {
+    public ResponseEntity<String> registerUser(@RequestBody SignUpDto signUpDTO) {
         StudyUser studyUser = signUpDTO.ofStudyUser();
 
         studyUserAuthService.signUp(studyUser);
