@@ -1,4 +1,4 @@
-package com.ward.studymoa.user.service;
+package com.ward.studymoa.user.service.impl;
 
 import com.ward.studymoa.common.config.JwtProvider;
 import com.ward.studymoa.common.config.StudyMoaAuthenticationProvider;
