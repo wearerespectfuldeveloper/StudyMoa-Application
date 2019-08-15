@@ -7,6 +7,8 @@
 package com.ward.studymoa.user.service;
 
 import com.ward.studymoa.user.domain.StudyWanted;
+import com.ward.studymoa.user.dto.request.WantedBoardRequestDto;
+import com.ward.studymoa.user.dto.response.WantedBoardDetailDto;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
@@ -20,11 +22,11 @@ import java.util.Optional;
  */
 public interface WantedBoardService {
 
-    Optional<StudyWanted> getBoard(Long idx);
+    WantedBoardDetailDto getBoard(Long idx);
 
-    StudyWanted boardWrite(StudyWanted studyWanted);
+    WantedBoardDetailDto boardWrite(WantedBoardRequestDto requestDto);
 
-    StudyWanted boardUpdate(StudyWanted studyWanted);
+    WantedBoardDetailDto boardUpdate(WantedBoardRequestDto requestDto);
 
     void boardDelete(Long idx);
 
