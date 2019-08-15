@@ -68,7 +68,8 @@ public class StudyUser extends BaseEntity {
     private StudyUserRoleType studyUserRoleType = StudyUserRoleType.ROLE_NON_AUTH_USER;
 
     @Builder
-    public StudyUser(String userId, String email, String password, String name, String phoneNumber, String introTitle, String introDesc) {
+    public StudyUser(Long idx, String userId, String email, String password, String name, String phoneNumber, String introTitle, String introDesc) {
+        this.idx = idx;
         this.userId = userId;
         this.email = email;
         this.password = password;
