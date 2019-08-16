@@ -1,6 +1,6 @@
 /**
  * StudyUser.class
- *
+ * <p>
  * Copyright (c) 2019 WARD.
  */
 package com.ward.studymoa.user.domain;
@@ -12,27 +12,22 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * 스터디모아 서비스에 가입한 회원 Entity
  *
- * @since 2019. 06. 22
  * @version 1.00
+ * @since 2019. 06. 22
  */
 @Entity
 @NoArgsConstructor
 @Getter
-public class StudyUser extends BaseEntity {
+public class StudyUser extends BaseEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,5 +76,35 @@ public class StudyUser extends BaseEntity {
 
     public void setEncodingPassword(PasswordEncoder passwordEncoder) {
         this.password = passwordEncoder.encode(this.password);
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singletonList(new SimpleGrantedAuthority(studyUserRoleType.getRoleType()));
+    }
+
+    @Override
+    public String getUsername() {
+        return this.userId;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

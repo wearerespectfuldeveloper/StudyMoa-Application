@@ -3,7 +3,6 @@ package com.ward.studymoa.user.service.impl;
 import com.ward.studymoa.user.domain.StudyUser;
 import com.ward.studymoa.user.repository.StudyUserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -23,13 +22,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException("StudyUser '" + userId + "' not found");
         }
 
-        return User.withUsername(userId)
-                .password(studyUser.getPassword())
-                .authorities(studyUser.getStudyUserRoleType().toString())
-                .accountExpired(false)
-                .accountLocked(false)
-                .credentialsExpired(false)
-                .disabled(false)
-                .build();
+        return studyUser;
     }
 }

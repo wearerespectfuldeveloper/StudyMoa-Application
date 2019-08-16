@@ -8,7 +8,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -27,16 +27,17 @@ public class StudyMoaAuthenticationProvider implements AuthenticationProvider {
         String userId = authentication.getName();
         String password = (String) authentication.getCredentials();
 
-        User user = null;
+        UserDetails userDetails = null;
         Collection<GrantedAuthority> authorities = null;
 
         try {
-            user = (User) userDetailsService.loadUserByUsername(userId);
+            userDetails = userDetailsService.loadUserByUsername(userId);
 
-            if (!passwordEncoder.matches(password, user.getPassword())) {
+            if (!passwordEncoder.matches(password, userDetails.getPassword())) {
                 throw new BadCredentialsException("비밀 번호가 일치하지 않습니다.");
             }
-            authorities = user.getAuthorities();
+            authorities = (Collection<GrantedAuthority>) userDetails.getAuthorities();
+
         } catch (UsernameNotFoundException e) {
             e.printStackTrace();
             throw new UsernameNotFoundException(e.getMessage());
