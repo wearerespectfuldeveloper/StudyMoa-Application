@@ -4,15 +4,14 @@
  * Copyright (c) 2019 WARD.
  */
 
-package com.ward.studymoa.user.service;
+package com.ward.studymoa.wantedboard.service;
 
-import com.ward.studymoa.user.domain.StudyWanted;
-import com.ward.studymoa.user.dto.request.WantedBoardRequestDto;
-import com.ward.studymoa.user.dto.response.WantedBoardDetailDto;
+import com.ward.studymoa.wantedboard.domain.StudyWanted;
+import com.ward.studymoa.wantedboard.dto.request.WantedBoardRequestDto;
+import com.ward.studymoa.wantedboard.dto.response.WantedBoardDetailDto;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * 스터디 구해요 서비스의 Write 인터페이스

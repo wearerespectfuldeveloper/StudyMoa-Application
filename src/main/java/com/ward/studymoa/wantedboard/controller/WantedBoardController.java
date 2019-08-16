@@ -3,11 +3,11 @@
  * <p>
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.user.controller;
+package com.ward.studymoa.wantedboard.controller;
 
-import com.ward.studymoa.user.dto.request.WantedBoardRequestDto;
-import com.ward.studymoa.user.dto.response.WantedBoardDetailDto;
-import com.ward.studymoa.user.service.WantedBoardService;
+import com.ward.studymoa.wantedboard.dto.request.WantedBoardRequestDto;
+import com.ward.studymoa.wantedboard.dto.response.WantedBoardDetailDto;
+import com.ward.studymoa.wantedboard.service.WantedBoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

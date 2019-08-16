@@ -3,9 +3,10 @@
  *
  * Copyright (c) 2019 WARD.
  */
-package com.ward.studymoa.user.domain;
+package com.ward.studymoa.wantedboard.domain;
 
 import com.ward.studymoa.common.audit.AuthorBaseEntity;
+import com.ward.studymoa.user.domain.StudyUser;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

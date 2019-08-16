@@ -4,14 +4,14 @@
  * Copyright (c) 2019 WARD.
  */
 
-package com.ward.studymoa.user.service.impl;
+package com.ward.studymoa.wantedboard.service.impl;
 
 import com.ward.studymoa.user.domain.StudyUser;
-import com.ward.studymoa.user.domain.StudyWanted;
-import com.ward.studymoa.user.dto.request.WantedBoardRequestDto;
-import com.ward.studymoa.user.dto.response.WantedBoardDetailDto;
-import com.ward.studymoa.user.repository.StudyWantedRepository;
-import com.ward.studymoa.user.service.WantedBoardService;
+import com.ward.studymoa.wantedboard.domain.StudyWanted;
+import com.ward.studymoa.wantedboard.dto.request.WantedBoardRequestDto;
+import com.ward.studymoa.wantedboard.dto.response.WantedBoardDetailDto;
+import com.ward.studymoa.wantedboard.repository.StudyWantedRepository;
+import com.ward.studymoa.wantedboard.service.WantedBoardService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Sort;

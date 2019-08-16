@@ -4,9 +4,9 @@
  * Copyright (c) 2019 WARD.
  */
 
-package com.ward.studymoa.user.repository;
+package com.ward.studymoa.wantedboard.repository;
 
-import com.ward.studymoa.user.domain.StudyWantedReply;
+import com.ward.studymoa.wantedboard.domain.StudyWantedReply;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
