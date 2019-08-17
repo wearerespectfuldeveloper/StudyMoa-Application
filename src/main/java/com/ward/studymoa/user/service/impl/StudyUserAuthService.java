@@ -8,6 +8,8 @@ import com.ward.studymoa.user.repository.StudyUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,14 +35,16 @@ public class StudyUserAuthService {
 
         studyUser.setEncodingPassword(passwordEncoder);
         studyUserRepository.save(studyUser);
-        return jwtProvider.generateJwtToken(studyUser.getUserId(), studyUser.getStudyUserRoleType());
+        return jwtProvider.generateJwtToken(studyUser);
     }
 
     @Transactional
     public String signIn(String userId, String password) {
         try {
-            studyMoaAuthenticationProvider.authenticate(new UsernamePasswordAuthenticationToken(userId, password));
-            return jwtProvider.generateJwtToken(userId, studyUserRepository.findByUserId(userId).getStudyUserRoleType());
+            Authentication authentication = studyMoaAuthenticationProvider
+                    .authenticate(new UsernamePasswordAuthenticationToken(userId, password));
+
+            return jwtProvider.generateJwtToken((UserDetails) authentication.getPrincipal());
         } catch (org.springframework.security.core.AuthenticationException e) {
             throw new AuthenticationException("UserId or password is wrong.", HttpStatus.UNPROCESSABLE_ENTITY);
         }

@@ -63,7 +63,15 @@ public class StudyUser extends BaseEntity implements UserDetails {
     private StudyUserRoleType studyUserRoleType = StudyUserRoleType.ROLE_NON_AUTH_USER;
 
     @Builder
-    public StudyUser(Long idx, String userId, String email, String password, String name, String phoneNumber, String introTitle, String introDesc) {
+    public StudyUser(Long idx,
+                     String userId,
+                     String email,
+                     String password,
+                     String name,
+                     String phoneNumber,
+                     String introTitle,
+                     String introDesc,
+                     StudyUserRoleType studyUserRoleType) {
         this.idx = idx;
         this.userId = userId;
         this.email = email;
@@ -72,6 +80,7 @@ public class StudyUser extends BaseEntity implements UserDetails {
         this.phoneNumber = phoneNumber;
         this.introTitle = introTitle;
         this.introDesc = introDesc;
+        this.studyUserRoleType = studyUserRoleType;
     }
 
     public void setEncodingPassword(PasswordEncoder passwordEncoder) {

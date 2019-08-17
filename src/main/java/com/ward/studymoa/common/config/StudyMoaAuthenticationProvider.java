@@ -40,7 +40,7 @@ public class StudyMoaAuthenticationProvider implements AuthenticationProvider {
             System.out.println(e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
-        return new UsernamePasswordAuthenticationToken(userId, password, userDetails.getAuthorities());
+        return new UsernamePasswordAuthenticationToken(userDetails, authentication.getCredentials(), userDetails.getAuthorities());
     }
 
     @Override
