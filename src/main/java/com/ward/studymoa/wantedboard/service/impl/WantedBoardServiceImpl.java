@@ -15,6 +15,7 @@ import com.ward.studymoa.wantedboard.service.WantedBoardService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,8 +43,8 @@ public class WantedBoardServiceImpl implements WantedBoardService {
 
     @Override
     public WantedBoardDetailDto boardWrite(WantedBoardRequestDto requestDto) {
-        StudyUser studyUser = StudyUser.builder()
-                .idx(requestDto.getStudyUserIdx()).build();
+        StudyUser studyUser = (StudyUser) SecurityContextHolder
+                .getContext().getAuthentication().getPrincipal();
 
         StudyWanted studyWanted = StudyWanted.builder()
                 .idx(requestDto.getIdx())
