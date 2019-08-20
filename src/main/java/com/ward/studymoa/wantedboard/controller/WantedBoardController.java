@@ -49,4 +49,9 @@ public class WantedBoardController {
 
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
+
+    @DeleteMapping("/{idx}")
+    public void deleteWantedBoard(@PathVariable Long idx) {
+        wantedBoardService.boardDelete(idx);
+    }
 }
