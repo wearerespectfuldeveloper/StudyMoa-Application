@@ -45,4 +45,9 @@ public class StudyWanted extends AuthorBaseEntity {
         this.wantedTitle = wantedTitle;
         this.wantedDesc = wantedDesc;
     }
+
+    public void modifyContent(String wantedTitle, String wantedDesc) {
+        this.wantedTitle = wantedTitle;
+        this.wantedDesc = wantedDesc;
+    }
 }

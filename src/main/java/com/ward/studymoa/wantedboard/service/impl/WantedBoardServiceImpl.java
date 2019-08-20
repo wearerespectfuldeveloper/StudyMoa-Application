@@ -17,6 +17,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -58,9 +59,14 @@ public class WantedBoardServiceImpl implements WantedBoardService {
     }
 
     @Override
+    @Transactional
     public WantedBoardDetailDto boardUpdate(WantedBoardRequestDto requestDto) {
-        //TODO updateBoard..
-        return null;
+        StudyWanted studyWanted = studyWantedRepository.findById(requestDto.getIdx())
+                .orElseThrow(() -> new IllegalArgumentException("board id is invalid."));
+
+        studyWanted.modifyContent(requestDto.getWantedTitle(), requestDto.getWantedDesc());
+        studyWantedRepository.save(studyWanted);
+        return modelMapper.map(studyWanted, WantedBoardDetailDto.class);
     }
 
     @Override

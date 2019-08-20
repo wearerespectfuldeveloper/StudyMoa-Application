@@ -40,4 +40,12 @@ public class WantedBoardController {
 
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
+
+    @PutMapping
+    public ResponseEntity<WantedBoardDetailDto> updateWantedBoard(
+            @RequestBody WantedBoardRequestDto requestDto) {
+        WantedBoardDetailDto responseDto = wantedBoardService.boardUpdate(requestDto);
+
+        return new ResponseEntity<>(responseDto, HttpStatus.OK);
+    }
 }
