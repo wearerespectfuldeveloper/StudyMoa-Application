@@ -21,5 +21,4 @@ public class WantedBoardRequestDto {
     private Long idx;
     private String wantedTitle;
     private String wantedDesc;
-    private Long studyUserIdx;
 }
