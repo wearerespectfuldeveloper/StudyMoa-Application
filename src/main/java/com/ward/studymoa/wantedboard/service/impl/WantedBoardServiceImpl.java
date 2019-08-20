@@ -35,6 +35,7 @@ public class WantedBoardServiceImpl implements WantedBoardService {
     private final ModelMapper modelMapper;
 
     @Override
+    @Transactional(readOnly = true)
     public WantedBoardDetailDto getBoard(Long idx) {
         StudyWanted resultModel = studyWantedRepository.findById(idx)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 게시물 번호입니다."));
@@ -43,6 +44,7 @@ public class WantedBoardServiceImpl implements WantedBoardService {
     }
 
     @Override
+    @Transactional
     public WantedBoardDetailDto boardWrite(WantedBoardRequestDto requestDto) {
         StudyUser studyUser = (StudyUser) SecurityContextHolder
                 .getContext().getAuthentication().getPrincipal();
@@ -70,11 +72,13 @@ public class WantedBoardServiceImpl implements WantedBoardService {
     }
 
     @Override
+    @Transactional
     public void boardDelete(Long idx) {
         studyWantedRepository.deleteById(idx);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<StudyWanted> getDownScrollBoardList(Long idx, Sort sort) {
         //TODO Infinity scroll function...
         return null;
