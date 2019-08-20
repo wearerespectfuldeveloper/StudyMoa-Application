@@ -25,7 +25,7 @@ public interface WantedBoardService {
 
     WantedBoardDetailDto boardWrite(WantedBoardRequestDto requestDto);
 
-    WantedBoardDetailDto boardUpdate(WantedBoardRequestDto requestDto);
+    WantedBoardDetailDto boardUpdate(Long idx, WantedBoardRequestDto requestDto);
 
     void boardDelete(Long idx);
 

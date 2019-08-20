@@ -18,7 +18,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class WantedBoardRequestDto {
 
-    private Long idx;
     private String wantedTitle;
     private String wantedDesc;
 }

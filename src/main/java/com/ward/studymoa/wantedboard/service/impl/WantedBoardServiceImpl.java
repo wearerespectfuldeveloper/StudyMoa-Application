@@ -50,7 +50,6 @@ public class WantedBoardServiceImpl implements WantedBoardService {
                 .getContext().getAuthentication().getPrincipal();
 
         StudyWanted studyWanted = StudyWanted.builder()
-                .idx(requestDto.getIdx())
                 .studyUser(studyUser)
                 .wantedTitle(requestDto.getWantedTitle())
                 .wantedDesc(requestDto.getWantedDesc())
@@ -62,8 +61,8 @@ public class WantedBoardServiceImpl implements WantedBoardService {
 
     @Override
     @Transactional
-    public WantedBoardDetailDto boardUpdate(WantedBoardRequestDto requestDto) {
-        StudyWanted studyWanted = studyWantedRepository.findById(requestDto.getIdx())
+    public WantedBoardDetailDto boardUpdate(Long idx, WantedBoardRequestDto requestDto) {
+        StudyWanted studyWanted = studyWantedRepository.findById(idx)
                 .orElseThrow(() -> new IllegalArgumentException("board id is invalid."));
 
         studyWanted.modifyContent(requestDto.getWantedTitle(), requestDto.getWantedDesc());

@@ -41,10 +41,11 @@ public class WantedBoardController {
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
 
-    @PutMapping
+    @PutMapping("/{idx}")
     public ResponseEntity<WantedBoardDetailDto> updateWantedBoard(
+            @PathVariable Long idx,
             @RequestBody WantedBoardRequestDto requestDto) {
-        WantedBoardDetailDto responseDto = wantedBoardService.boardUpdate(requestDto);
+        WantedBoardDetailDto responseDto = wantedBoardService.boardUpdate(idx, requestDto);
 
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
